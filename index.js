@@ -44,6 +44,6 @@ PARAMETROS:
 2 - CALLBACK: 
 */
 
-app.listen(3000, ()=>{ 
-    console.log('SERVIDOR RODANDO EM - http://localhost:3000'); 
-});
+    app.listen(3000, ()=>{ 
+        console.log('SERVIDOR RODANDO EM - http://localhost:3000'); 
+    });

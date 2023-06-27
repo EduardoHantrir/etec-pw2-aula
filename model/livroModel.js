@@ -8,12 +8,11 @@ const connection = require('../database/database');
 const categoria = require('./categoriaModel');
 
 const livro = connection.define(
-    'tbl_livro',
+    'tbl_livro',        
     {
         titulo:{
             type: sequelize.STRING(500),
             allowNull:false
-
         },
         preco:{
             type: sequelize.STRING(500),

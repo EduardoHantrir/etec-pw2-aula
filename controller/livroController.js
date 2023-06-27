@@ -1,6 +1,10 @@
 const express = require('express');
 const livroModel = require('../model/livroModel');
+<<<<<<< HEAD
 const upload = require('../helper/upload');
+=======
+const upload = require('../helpers/upload/upload');
+>>>>>>> 3a8690813a71cc3b513f495e3c762679c7b1eb4d
 
 /* GERENCIADOR DE ROTAS*/
 const router = express.Router();
@@ -9,8 +13,14 @@ const router = express.Router();
 router.post('/livro/inserir', upload.array('imagens', 2), (req,res)=>{
     
     let { titulo, preco, detalhes, tblCategoriumId } = req.body;
+<<<<<<< HEAD
     let imagem_peq = req.imagens[0].path;
     let imagem_grd = req.imagens[1].path;
+=======
+
+    let imagem_peq = req.files[0].path;
+    let imagem_grd = req.files[1].path;
+>>>>>>> 3a8690813a71cc3b513f495e3c762679c7b1eb4d
 
     livroModel.create(
         {
@@ -137,7 +147,11 @@ router.delete('/livro/excluir/:id', (req,res)=>{
     let {id} = req.params;
 
     livroModel.destroy(
+<<<<<<< HEAD
         {where:{id}} 
+=======
+        {where:{id}}
+>>>>>>> 3a8690813a71cc3b513f495e3c762679c7b1eb4d
     ).then(
         ()=>{
             return res.status(200).json({

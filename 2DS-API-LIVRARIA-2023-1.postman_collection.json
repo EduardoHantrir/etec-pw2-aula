@@ -32,6 +32,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome_categoria\":\"TESTE AULA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{url_base}}/categoria/inserir",
 							"host": [
@@ -50,6 +59,15 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":4,\r\n    \"nome_categoria\":\"TESTE DE ALTERAÇÃO - AULA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{url_base}}/categoria/alterar",
 							"host": [
@@ -69,13 +87,172 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{url_base}}/categoria/excluir",
+							"raw": "{{url_base}}/categoria/excluir/4",
 							"host": [
 								"{{url_base}}"
 							],
 							"path": [
 								"categoria",
-								"excluir"
+								"excluir",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "livro",
+			"item": [
+				{
+					"name": "inserir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "titulo",
+									"value": "TESTE DE CADASTRO DE LIVRO COM FORMULÁRIO",
+									"type": "text"
+								},
+								{
+									"key": "preco",
+									"value": "150",
+									"type": "text"
+								},
+								{
+									"key": "detalhes",
+									"value": "TESTE DE CADASTRO DE LIVRO COM FORMULÁRIO",
+									"type": "text"
+								},
+								{
+									"key": "tblCategoriumId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "imagens",
+									"type": "file",
+									"src": [
+										"/C:/Users/cristiano_46636/Downloads/duck-g8e0973fb4_640.jpg",
+										"/C:/Users/cristiano_46636/Downloads/duck-g9b4186032_640.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_base}}/livro/inserir",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"livro",
+								"inserir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "alterar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\":\"O HOBBIT - TESTE DE ALTERAÇÃO\",\r\n    \"preco\":\"150\",\r\n    \"imagem_peq\":\"IMAGEM PEQUENA - TESTE DE ALTERAÇÃO\",\r\n    \"imagem_grd\":\"IMAGEM GRANDE - TESTE DE ALTERAÇÃO\",\r\n    \"detalhes\":\"UM OBRA DE J.R.R TOLKIEN - TESTE DE ALTERAÇÃO\",\r\n    \"tblCategoriumId\":3,\r\n    \"id\":4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/livro/alterar",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"livro",
+								"alterar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/livro/excluir/4",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"livro",
+								"excluir",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selecionar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/livro/selecionar",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"livro",
+								"selecionar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selecionarID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/livro/selecionar/3",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"livro",
+								"selecionar",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selecionarOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/livro/selecionar/SENHOR DOS ANEIS AS DUAS TORRES",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"livro",
+								"selecionar",
+								"SENHOR DOS ANEIS AS DUAS TORRES"
 							]
 						}
 					},
